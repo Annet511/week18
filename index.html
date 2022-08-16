@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета</title>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/1818/1818401.png" type="image/png">
+    <!-- <link rel="stylesheet" href="style.css" type="text/css" /> -->
+    <style>
+        input:required:valid {
+            border-color: green;
+        }
+    </style>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <form>
+        <h1>Анкета для владельницев котиков</h1>
+        <img src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y3V0ZSUyMGNhdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60и"
+            alt="cat" id="catimage" onclick="changeMe()">
+        <ol>
+            <li>
+                <label for="name">Кличка вашего питомца</label> <br>
+                <input type="text" id="name" required />
+            </li>
+            <li>
+                <label for="fio">Имя и фамилия владельца</label> <br>
+                <input type="text" id="fio" required />
+            </li>
+            <li>
+                <label for="contact">Номер телефона</label>
+                <input type="text" id="contact" required>
+                <label for="mail">Электронная почта</label>
+                <input type="email" id="mail" required>
+            <li>
+                Выберете породу вашего питомца
+                <select required>
+                    <option value="" selected>Порода</option>
+                    <option value="1">сиамская</option>
+                    <option value="2">сфинкс</option>
+                    <option value="3">британская</option>
+                    <option value="4">персидская</option>
+                    <option value="5">русская</option>
+                </select>
+            </li>
+            <li>
+                <label for="name">Выберете каким кормом питается ваш питомец</label> <br>
+                <input type="checkbox" name="food" required /> сухой <br>
+                <input type="checkbox" name="food" /> влажный <br>
+                <input type="checkbox" name="food" /> натуральный <br>
+            </li>
+            <li>
+
+                <label for="name">Выберете пол вашего питомец</label> <br>
+                самка <input type="radio" name="sex" required /> <br>
+                самец <input type="radio" name="sex" />
+            </li>
+            <li>
+                <label for="name">Опишите самую забавную ситуацию
+                    связанную с тем, как ваш питомец ест</label><br>
+                <textarea rows="10" cols="70" required></textarea>
+            </li>
+            <!-- <li>
+                <label for="name">Загрузите фото своего питомца</label> <br>
+                <input type="file">
+                <input type="submit" />
+            </li> -->
+        </ol>
+        <div><button onclick="clickMe()">Сохранить</button></div>
+    </form>
+    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/xkySQoGM8ws" title="YouTube video player"
+        style="border:0px;" allow="accelerometer; autoplay; 
+    clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+</body>
+
+</html>
