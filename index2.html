@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&family=Quicksand:wght@300&family=Roboto:ital,wght@0,400;0,500;1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        .wrapper {
+            background-color: #ffe4c459;
+            font-family: 'Quicksand', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .subttl {
+            margin: 10px;
+        }
+
+        .container {
+            display: block;
+            border: none;
+            background-color: antiquewhite;
+            width: 50.5%;
+        }
+
+        .placecomments {
+            display: flex;
+            padding: 20px 0px;
+            text-align: center;
+
+        }
+
+        .newComment {
+            width: 500px;
+        }
+
+        .btn {
+            width: 300px;
+            height: 40px;
+            background-color: burlywood;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Панель добавления анонимных коментариев</h1>
+        <div class="container"></div>
+        <h5 class="subttl">Напишите, пожалуйста,и в окне ниже ваш комментарий</h4>
+            <div class="placecomments">
+                <textarea class="newComment" rows="5" placeholder="Введите комментарий"></textarea>
+            </div>
+            <div>
+                <button class="btn">Добавить комментарий</button>
+            </div>
+    </div>
+
+
+
+
+    <!-- <script>
+        let comments = [];
+
+        function addComments() {
+            let com = document.querySelector('.newComment').value;
+            let checks = checkSpam(com);
+            comments.push(checks);
+            generateComments();
+            clearTxtArea();
+
+        }
+
+        function generateComments() {
+            let optionsString = "";
+            for (let comment of comments) {
+                optionsString += `<div><span>${comment}</span></div>`;
+            }
+            document.querySelector('.container').innerHTML = optionsString;
+        }
+
+        function checkSpam(str) {
+            let commentV = str.replace(/viagra/gi, "***");
+            let commentRv = commentV.replace(/виагра/gi, "***");
+            let commentX = commentRv.replace(/xxx/gi, "***");
+            let commentRx = commentX.replace(/ххх/gi, "***");
+            return commentRx;
+        }
+
+        function clearTxtArea() {
+            document.querySelector('.newComment').value = " ";
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            generateComments();
+        });
+    </script> -->
+    <script src="script2.js"></script>
+    <!--  не работал js пока не перенесла ссылку на него вниз -->
+</body>
+
+</html>
