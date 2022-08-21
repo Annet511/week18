@@ -1,60 +1,83 @@
-const button = document.querySelector (".btn");
-const  comments = document.querySelector (".container");
-const textarea = document.querySelector (".newComment");
+// function changeColor() {
+    // if (document.getElementByIdmentById ("pagecolor").value == "pink") {
+    //     document.getElementById("main").style.background = #;
+    // }
 
+    // var selectedColor = document.getElementById("pagecolor").value;
+    // document.body.style.backgroundColor = selectedColor;
 
-let array = [];
+    // let selectedColor = document.getElementById("pagecolor").value;
+    // if selectedColor == "pink") {
+    //     document.getElementById("main").classList.add (".mainbgpink");
+    // }
+   
+}
 
-//обработчик события 
-button.addEventListener("click", function () {
- let text = textarea.value;
- textarea.value = ""; // очищаем поле ввода сразу после вывода результата в див 
+// function check() {
+//     let name = document.getElementById ("nameInput");
+//     let surname = document.getElementById ("surname");
+//     let mail = document.getElementById ("mail");
+//     let password = document.getElementById ("password");
+//     let submitpassword = document.getElementById ("submitpassword");
 
-//тут будет проверка на соответствие комментария условию 
+//     document.getElementById('errorMessage').innerHTML = "";
 
- array.push(text);
+//     if (name.value =='') {
+//         document.getElementById('errorMessage').innerHTML +="Ваше имя не заполнено <br>";
+//     }
+   
+//     if (surname.value =='') {
+//         document.getElementById('errorMessage').innerHTML +="Ваша фаимлия не заполнена <br>";
+//     }
+    
+//     if (mail.value =='') {
+//         document.getElementById('errorMessage').innerHTML +="Ваша почта не заполнена <br>";
+//     }
+    
+//     if (password.value =='') {
+//         document.getElementById('errorMessage').innerHTML +="Ваше имя не заполнено <br>";
+//     }
+    
+//     if (submitpassword.value =='') {
+//         document.getElementById('errorMessage').innerHTML +="Ваше имя не заполнено <br>";
+//     }
+    
+//     if (password.value.length <=6) {
+//         document.getElementById('errorMessage').innerHTML += "Ваш пароль слишком короткий, введите больше 7 символов <br>";
+//     }
+//     else alert (`welcome: ` + name);
+// }
 
-comments.innerHTML = ""; //чтобы коментарии добавлялись по одному, а не слипались с предыдущими
- //так как без разницы на порядок комментариев и их индексы
-render (comments, array);
+let errors = [];
+function checkValidity (input) {
+let validity = input.validity;
 
-});
+if (validity.valueMising) {
+    errors.push ('Поле ' + input.placeholder + ' не заполнено'); 
+}
 
- function render (parentNode, data){
-    //  for (let item of array) - нам уже нен подходит, так как нам необходим индекс удаленного элемента
-    for (let i=0; i<data.length; i++) {
-        let item = data[i];
+if (validity.patternMismatch) {
+    errors.push ('Неверный формат заполнения');
+}
 
-        const spam = ["viagra", "xxx", "виагра", "ххх"];
-        let filtredText = item;
-        for (let word of spam) {
-            let reg = new RegExp (word, "ig");
-            filtredText = filtredText.replace(reg, "***");
-        }
-        
-        let node = document.createElement ('div'); //это домик для комменатриев
-        node.classList.add ("comment"); //добавляет класс дивам с комментариями, которые получаются в результате отправки
-        node.textContent = filtredText;// кладем через textContent  
+if (validity.rangeOverflow) {
+    let max = getAttributive (input, 'max'); 
+    errors.push ('Максимальное значени не может быть больше чем ' + min);
+}
 
-        let deleteButton = document.createElement ("button");
-        deleteButton.classList.add("comment_button");
-        deleteButton.textContent = "X";
+if (validity.rangeOverflow) {
+    let min = getAttributive (input, 'min'); 
+    errors.push ('Минимальное значени не может быть больше чем ' + max);
+}
+}
 
-        deleteButton.addEventListener("click", () => {
-        node.remove();
-        data.splice(i, 1);
-        });
-        //вопрос - если продолжать просто добавлять путые комментарии - то будет просто добавляться крестик
+function checkAll() {
+    errors = [];
+    let  inputs = document.querySelectorAll("input");
 
-         // она вставляет наш deleteButton внутрь node
-        node.append(deleteButton);
-        // она вставляет наш node внутрь parentNode
-        parentNode.append (node); 
+     for (let input of inputs) {
+         checkValidity(input);
+     }
 
-        // comments.innerHTML += item + "<br>"; // используем вместо textContent innerHTML чтобы вставлялись br   
-    }
- }
-
- 
-
-
+     document.getElementById ('errorMessage').innerHTML = errors.join('. <br>');
+}
