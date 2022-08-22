@@ -10,8 +10,8 @@
     // if selectedColor == "pink") {
     //     document.getElementById("main").classList.add (".mainbgpink");
     // }
-   
-}
+//   
+//}
 
 // function check() {
 //     let name = document.getElementById ("nameInput");
@@ -25,7 +25,7 @@
 //     if (name.value =='') {
 //         document.getElementById('errorMessage').innerHTML +="Ваше имя не заполнено <br>";
 //     }
-   
+//   
 //     if (surname.value =='') {
 //         document.getElementById('errorMessage').innerHTML +="Ваша фаимлия не заполнена <br>";
 //     }
@@ -53,11 +53,11 @@ function checkValidity(input) {
 let validity = input.validity;
 
 if (validity.valueMising) {
-    errors.push ('Поле ' + input.placeholder + ' не заполнено'); 
+    errors.push('Поле ' + input.placeholder + ' не заполнено'); 
 }
 
 if (validity.patternMismatch) {
-    errors.push ('Неверный формат заполнения');
+    errors.push('Неверный формат заполнения');
 }
 
 if (validity.rangeOverflow) {
@@ -67,7 +67,7 @@ if (validity.rangeOverflow) {
 
 if (validity.rangeOverflow) {
     let min = getAttributeValue(input, 'min'); 
-    errors.push ('Минимальное значени не может быть больше чем ' + min;
+    errors.push('Минимальное значени не может быть больше чем ' + min);
 }
 }
 
@@ -79,5 +79,5 @@ function checkAll() {
          checkValidity(input);
      }
 
-     document.getElementById ('errorMessage').innerHTML = errors.join('. <br>');
+     document.getElementById('errorMessage').innerHTML = errors.join('. <br>');
 }
