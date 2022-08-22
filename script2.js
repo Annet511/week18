@@ -49,7 +49,7 @@
 // }
 
 let errors = [];
-function checkValidity (input) {
+function checkValidity(input) {
 let validity = input.validity;
 
 if (validity.valueMising) {
@@ -61,13 +61,13 @@ if (validity.patternMismatch) {
 }
 
 if (validity.rangeOverflow) {
-    let max = getAttributive (input, 'max'); 
-    errors.push ('Максимальное значени не может быть больше чем ' + min);
+    let max = getAttributeValue(input, 'max'); 
+    errors.push('Максимальное значение не может быть больше чем ' + max);
 }
 
 if (validity.rangeOverflow) {
-    let min = getAttributive (input, 'min'); 
-    errors.push ('Минимальное значени не может быть больше чем ' + max);
+    let min = getAttributeValue(input, 'min'); 
+    errors.push ('Минимальное значени не может быть больше чем ' + min;
 }
 }
 
