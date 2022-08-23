@@ -20,7 +20,10 @@ button.addEventListener("click", function () {
 
 //тут будет проверка на соответствие комментария условию 
 
- array.push(text);
+if (text !=='') {
+    array.push(text);
+}
+ 
 
 comments.innerHTML = ""; //чтобы коментарии добавлялись по одному, а не слипались с предыдущими
  
