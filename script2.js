@@ -76,8 +76,8 @@ function checkAll() {
     let  inputs = document.querySelectorAll("input");
 
      for (let input of inputs) {
-         checkValidity(input);
+        checkValidity(input);
      }
 
-     document.getElementById('errorMessage').innerHTML = errors.join('. <br>');
+     document.getElementById('errorMessage').innerHTML= errors.join('. <br>');
 }

@@ -1,7 +1,16 @@
 document.addEventListener ("DOMcontentLoaded", function (event) {
+
     let name = localStorage.getItem ('name');
     if (name != null) {
         document.getElementById ("author").value = name;
+    }
+
+    if (localStorage.getItem('userComments') !==null) { 
+        let previousComments = JSON.parse (localStorage.getItem ('userComments'));
+        
+        for (let i = 0; i < previousComments.length; i++) {
+array.push(previousComments[i]);
+        }
     }
 })
 
@@ -35,11 +44,14 @@ render (comments, array);
  function render (parentNode, data){
     let author = document.getElementById ("author").value;
     
+    //сохранение имени пользователя
     if (localStorage.getItem ('name')==null) 
     {
         localStorage.setItem ('name', author);
     }
-   
+   //сохранение коментариев пользователя
+    let localComments = JSON.stringify(array);
+    localStorage.setItem('userComments', localComments);
     // if (localStorage.getItem ('comment')==null) 
     // {
     //     localStorage.setItem ('comment', filtredText);
