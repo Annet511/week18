@@ -26,7 +26,7 @@
             margin: 10px;
         }
 
-        .container {
+        .comments {
             display: block;
             border: none;
             background-color: antiquewhite;
@@ -34,13 +34,13 @@
         }
 
         .placecomments {
-            display: flex;
-            padding: 20px 0px;
+            /* display: flex; */
+            /* padding: 20px 0px; */
             text-align: center;
 
         }
 
-        .newComment {
+        .comment {
             width: 500px;
         }
 
@@ -55,38 +55,33 @@
 
 <body>
     <div class="wrapper">
-        <h1>Панель добавления анонимных коментариев</h1>
-        <div class="container"></div>
-        <div>
-            <label for="author">Введите имя
-                <span id="authorError"></span>
-            </label>
-        </div>
-        <div>
-            <input type="text" name="author" id="author" value="" class="inputs">
-        </div>
-        <div>
-            <label for="pic">Добавьте свое фото
-                <span id="picError"></span>
-            </label>
-        </div>
-        <!-- <div>
-            <input type="radio" name="pic" id="pic">
-            <input type="radio" name="pic" id="pic">
-            <input type="radio" name="pic" id="pic">
-        </div>
-        <div>
-            <label for="newComment">Напишите, пожалуйста,и в окне ниже ваш комментарий
-                <span id="commentError"></span>
-            </label>
-        </div>
-        <h5 class="subttl">Напишите, пожалуйста,и в окне ниже ваш комментарий</h4> -->
-        <div class="placecomments">
-            <textarea class="newComment" id="newComment" rows="5" class="inputs"></textarea>
-        </div>
-        <div>
-            <button class="btn">Добавить комментарий</button>
-        </div>
+        <form>
+            <h1>Панель добавления анонимных коментариев</h1>
+
+            <div>
+                <label for="username">Введите имя
+                </label>
+            </div>
+            <div>
+                <input type="text" name="username" id="username">
+            </div>
+            <div>
+                <label for="avatar">Добавьте свое фото
+                </label>
+            </div>
+            <div>
+                <input type="url" name="avatar">
+            </div>
+
+            <h5 class="subttl">Напишите, пожалуйста, в окне ниже ваш комментарий</h4>
+                <div class="placecomments">
+                    <textarea class="comment" name="comment" rows="5"></textarea>
+                </div>
+                <div>
+                    <button class="btn">Добавить комментарий</button>
+                </div>
+        </form>
+        <div class="comments"></div>
     </div>
 
 
